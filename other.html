@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="css/class xii.css">
+    <link rel="stylesheet" href="css/container.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color-changer.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+
+    <!-- FEATHER ICONS JS data-feather (https://feathericons.com/)-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.js'
+        integrity='sha512-oFCsbxZP/K+0EjvkyIHBvC3ft8LZnO+8kljz0RiJN8ffUCeX0LF1G0WlvU3jMJVaoKBrC+I2ohi4BCpKq2ZgXw=='
+        crossorigin='anonymous' referrerpolicy='no-referrer'></script>
+
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- ====== Fontawesome CDN Link ====== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!----===== font-awesome ===== -->
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'> -->
+
+    <!-- ==================== font-awesome CDN Link fax (https://fontawesome.com/icons) ====================-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Icons'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+    <!----===== print-js   (https://printjs.crabbly.com/) ===== -->
+    <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
+    <!----===== animate on scroll   (https://michalsnik.github.io/aos/) ===== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- toastr (https://codeseven.github.io/toastr/demo.html) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- ==================== favicon ====================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="fav-icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav-icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav-icon/favicon-16x16.png">
+    <link rel="manifest" href="fav-icon/site.webmanifest">
+
+    <title>Other Documents</title>
+
+    <!-- ==================== Prevent Backward and forward ====================-->
+    <script>
+      function preventBack() {
+        window.history.forward();
+      }
+      setTimeout('preventBack()', 0);
+      window.onload = function () { null };
+    </script>
+</head>
+
+<body oncopy="return false" onpaste="return false">
+
+    <!-- custom right click  -->
+    <div class="container wwrapper">
+        <!-- code here -->
+        <div class="menu context--menu ccontent" id="context-menu">
+            <ul class="menu-list menu">
+                <li class="menu-item item" onclick="window.history.back();"><i
+                        data-feather="corner-up-left"></i><span>Back</span></li>
+
+                <li class="menu-item item" onclick="window.history.forward();"><i
+                        data-feather="corner-up-right"></i><span>Forward</span></li>
+
+                <li class="menu-item item" onclick="location.reload();"><i
+                        data-feather="refresh-cw"></i><span>Refresh</span>
+                </li>
+
+                <li class="menu-list item share">
+                    <div class="arrow menu-item menu-item-status">
+                        <i data-feather="share"></i><span>Share</span><i data-feather="chevron-right"
+                            class="menu-item--right"></i>
+                    </div>
+
+                    <ul class="menu-sub-list share-menu" id="contextt-menu">
+                        <li class="menu-item menu-item--blue item"
+                            onclick="window.open('https://www.facebook.com/bibek.sha.14268/');"><i
+                                data-feather="facebook"></i><span>Facebook</span></li>
+                        <li class="menu-item menu-item--pink item"
+                            onclick="window.open('https://www.instagram.com/bibeksha1432/');"><i
+                                data-feather="instagram"></i><span>Instagram</span></li>
+                        <li class="menu-item menu-item--blue item"
+                            onclick="window.open('https://twitter.com/BibekSa31789884');"><i
+                                data-feather="twitter"></i><span>Twitter</span></li>
+                        <li class="menu-item menu-item--purple item" onclick="window.open('https://t.me/bibek10550');">
+                            <i data-feather="send"></i><span>Telegram</span>
+                        </li>
+                        <li class="menu-item menu-item--black item"
+                            onclick="window.open('https://github.com/bibek10550');"><i
+                                data-feather="github"></i><span>GitHub</span><i class="menu-item--checked"
+                                data-feather="check"></i>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-item item" onclick="Copy();"><i data-feather="link"></i><span>Copy Link Address</span>
+                </li>
+                <li class="menu-item item" onclick="FullScreenMode()"><i data-feather="maximize"></i><span>Full
+                        Screen</span>
+                </li>
+                <li class="menu-item item" onclick="window.print()"><i data-feather="printer"></i><span>Print</span>
+                </li>
+                <li class="menu-item item"><i data-feather="folder-plus"></i><span>Move to</span></li>
+                <li class="menu-item item"><i data-feather="copy"></i><span>Copy to</span></li>
+                <li class="menu-item item"><i data-feather="lock"></i><span>Make Private</span></li>
+                <li class="menu-item item"><i data-feather="download"></i><span>Download</span></li>
+
+            </ul>
+            <div class="menu-list setting">
+                <li class="menu-item menu-item--delete item"><i data-feather="trash-2"></i><span>Delete</span></li>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== nav-menu ========== -->
+    <nav class="sidebar close" id="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image" onclick="window.open('https://bibek10550.github.io/bibek/');">
+                    <img src="img/logo.png" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Bibek Sah</span>
+                    <span class="profession">Web developer</span>
+                </div>
+                <span class="tooltipp">Bibek</span>
+            </div>
+
+            <i class='bx bx-chevron-right toggle' id="toggle"></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search bx-sm icon searchBtn'></i>
+                    <span class="tooltip">Search</span>
+                    <!-- <input type="search" placeholder="Search..."> -->
+                    <div class="InputBox search-field">
+                        <input type="search" class="query" id="SearchInput" placeholder="Search..." onkeyup="search()">
+                        <!-- search result dropdown box start -->
+                        <ul class="SearchResult" id="ResultBox">
+                            <li><a href="https://bibek10550.github.io/bibek/">Bibek</a></li>
+                            <li><a href="https://bibek10550.github.io/bibeksha/">User</a></li>
+                            <li><a href="verify class x.html">Class x</a></li>
+                            <li><a href="verify class xi.html">Class xi</a></li>
+                            <li><a href="verify class xii.html">Class xii</a></li>
+                            <li><a href="verify other.html">Other</a></li>
+                            <li><a href="#">Greeky Shows</a></li>
+                            <li><a href="#">VishAcademy</a></li>
+                            <li><a href="#">CS Geeks</a></li>
+                            <li><a href="#">JP Web</a></li>
+                            <li><a href="#">Rampant</a></li>
+                            <li><a href="#">Education</a></li>
+                        </ul>
+                        <!-- search result dropdown box End -->
+                    </div>
+
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="cover.html">
+                            <i class='bx bx-home-alt bx-sm icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                            <span class="tooltip">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="verify class xii.html">
+                            <span class="icon fa-stack">
+                                <span class="bx bx-circle bx-md bx-burst"></span>
+                                <strong class="fa-stack-1x">
+                                    12
+                                </strong>
+                            </span>
+                            <span class="text nav-text">Class XII</span>
+                            <span class="tooltip">Class XII</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="verify class xi.html">
+                            <span class=" icon fa-stack">
+                                <span class="bx bx-square-rounded bx-md bx-tada"></span>
+                                <strong class="fa-stack-1x">
+                                    11
+                                </strong>
+                            </span>
+                            </span>
+                            </span>
+                            <span class="text nav-text">Class XI</span>
+                            <span class="tooltip">Class XI</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="verify class x.html">
+                            <span class=" icon fa-stack">
+                                <span class="bx bx-square-rounded bx-md bx- bx-spin "></span>
+                                <strong class="fa-stack-1x">
+                                    10
+                                </strong>
+                            </span>
+                            <span class="text nav-text">Class X</span>
+                            <span class="tooltip">Class X</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="verify other.html">
+                            <i class='bx bx-plus-circle icon bx-md'></i>
+                            <span class="text nav-text">Other</span>
+                            <span class="tooltip">Other</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="https://bibek10550.github.io/bibeksha/">
+                            <i class="fa-solid fa-user icon"></i>
+                            <span class="text nav-text">User</span>
+                            <span class="tooltip">User</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="logout">
+                    <a href="index.html">
+                        <i class='bx bx-log-out bx-sm icon'></i>
+                        <span class="text nav-text">Logout</span>
+                        <span class="tooltip">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+                    <div class="toggle-switch dark-light">
+                        <input type="checkbox" class="checkbox" id="chk" />
+                        <label class="label switch dark-light" for="chk">
+                            <i class="bx bx-moon"></i>
+                            <i class="bx bx-sun"></i>
+                        </label>
+                    </div>
+
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+  <!-- ========== color-changer ========== -->
+  <div class="color-switcher" id="color-switcher">
+    <span class="draggablee" style="margin: 10px; cursor: move;">
+      <div class="switcher-btn" title="change color">
+        <i class="fas fa-palette change-color"></i>
+      </div>
+      <div class="switcher-btnn" title="Change Theme">
+        <i class="fas uil uil-moon change-theme" id="theme-button" title="Dark Mode"></i>
+      </div>
+    </span>
+    <h3>select color</h3>
+    <div class="theme-buttons-container">
+      <span class="theme-buttons" title="Light Blue" data-color="208" style="background: hsl(208, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#8e44ad" style="background: #8e44ad;"></span> -->
+      <span class="theme-buttons" title="Lighter Blue" data-color="205" style="background: hsl(205, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#27ae60" style="background: #27ae6e;"></span> -->
+      <span class="theme-buttons" title="Dark Blue" data-color="600" style="background: hsl(240, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#e74c3c" style="background: #ea2027;"></span> -->
+      <span class="theme-buttons" title="Dark Green" data-color="142" style="background: hsl(142, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#2980b9" style="background: #2980b9;"></span> -->
+      <span class="theme-buttons" title="Light Green" data-color="1242"
+        style="background: hsl(1242, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#ff4757" style="background: #ff4757;"></span> -->
+      <span class="theme-buttons" title="Red" data-color="340" style="background: hsl(340, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#f39c12" style="background: #f39c12;"></span> -->
+      <span class="theme-buttons" title="Yellow" data-color="761" style="background: hsl(41, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#e84393" style="background: #e84393;"></span> -->
+      <span class="theme-buttons" title="Orange" data-color="20" style="background: hsl(20, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#ffc312" style="background: #ffc312;"></span> -->
+      <span class="theme-buttons reset_rotate" title="Reset" data-color="" style="background: hsl(0, 100%, 50%);"><i
+          class="fa-solid fa-rotate-right rotate_right"></i></span>
+    </div>
+  </div>
+
+    <!-- ========== container ========== -->
+    <section class="home" id="home">
+        <div class="container" id="container">
+            <main class="grid">
+                <article data-aos="fade-up-right">
+                    <img src="img/compressed size=2472 x 3684/bank account.jpg" alt="SBI bank account" id="mainImg">
+                    <div class="text">
+                        <h3>SBI bank account</h3>
+                        <p>QR code of SBI bank account Kathmandu,Nepal</p>
+                        <span class="butn">
+                            <a value="Print Image" onclick="printImg12()" class="button">
+                                Print<i class="fas fa-print"></i>
+                            </a>
+                            <a onclick="toast()" download="" href="img/a4 size/SBI bank account.jpg" class="button">
+                                Download<i class="fas fa-download"></i>
+                            </a>
+                        </span>
+                    </div>
+                </article>
+                <article data-aos="fade-up">
+                    <img src="img/compressed size=2472 x 3684/citizenship.jpg" alt="Citizenship">
+                    <div class="text">
+                        <h3>Citizenship</h3>
+                        <p>Citizenship issued from Saptari,Nepal</p>
+                        <span class="butn">
+                            <a value="Print Image" onclick="printImg13()" class="button">
+                                Print<i class="fas fa-print"></i>
+                            </a>
+                            <a onclick="toast()" download="" href="img/a4 size/citizenship.jpg" class="button">
+                                Download<i class="fas fa-download"></i>
+                            </a>
+                        </span>
+                    </div>
+                </article>
+                <article data-aos="fade-up-left">
+                    <img src="img/compressed size=2472 x 3684/Vaccination card.jpg" alt="Vaccination card">
+                    <div class="text">
+                        <h3>Vaccination card</h3>
+                        <p>Vaccination card issued from Rautahat,Nepal</p>
+                        <span class="butn">
+                            <a value="Print Image" onclick="printImg14()" class="button">
+                                Print<i class="fas fa-print"></i>
+                            </a>
+                            <a onclick="toast()" download="" href="img/a4 size/vaccination card.jpg" class="button">
+                                Download<i class="fas fa-download"></i>
+                            </a>
+                        </span>
+                    </div>
+                </article>
+                <article data-aos="fade-up-right">
+                    <img src="img/compressed size=2472 x 3684/madeshi certificate.jpg" alt="madeshi certificate">
+                    <div class="text">
+                        <h3>madeshi certificate</h3>
+                        <p>Madeshi certificate issued from Saptari,Nepal</p>
+                        <span class="butn">
+                            <a value="Print Image" onclick="printImg15()" class="button">
+                                Print<i class="fas fa-print"></i>
+                            </a>
+                            <a onclick="toast()" download="" href="img/a4 size/madheshi certificate.jpg" class="button">
+                                Download<i class="fas fa-download"></i>
+                            </a>
+                        </span>
+                    </div>
+                </article>
+                <article data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-offset="300">
+                    <img src="img/compressed size=2472 x 3684/passport-1.jpg" alt="passport">
+                    <div class="text">
+                        <h3>passport</h3>
+                        <p>Passport issued from Chandranighapur,Rautahat,Nepal</p>
+                        <span class="butn">
+                            <a value="Print Image" onclick="printImg16()" class="button">
+                                Print<i class="fas fa-print"></i>
+                            </a>
+                            <a onclick="toast()" download="" href="img/a4 size/passport-1.jpg" class="button">
+                                Download<i class="fas fa-download"></i>
+                            </a>
+                        </span>
+                    </div>
+                </article>
+                <article data-aos="fade-up-left">
+                    <img src="img/compressed size=2472 x 3684/passport-2.jpg" alt="passport">
+                    <div class="text">
+                        <h3>passport</h3>
+                        <p>Passport issued from Chandranighapur,Rautahat,Nepal</p>
+                        <span class="butn">
+                            <a value="Print Image" onclick="printImg17()" class="button">
+                                Print<i class="fas fa-print"></i>
+                            </a>
+                            <a onclick="toast()" download="" href="img/a4 size/passport-2.jpg" class="button">
+                                Download<i class="fas fa-download"></i>
+                            </a>
+                        </span>
+                    </div>
+                </article>
+                <article data-aos="fade-up-right">
+                    <img src="img/compressed size=2472 x 3684/passport size photo.jpg" alt="passport size photo">
+                    <div class="text">
+                        <h3>passport size photo</h3>
+                        <p>passport size photo</p>
+                        <span class="butn">
+                            <a value="Print Image" onclick="printImg18()" class="button">
+                                Print<i class="fas fa-print"></i>
+                            </a>
+                            <a onclick="toast()" download="" href="img/a4 size/passport size photo.jpg" class="button">
+                                Download<i class="fas fa-download"></i>
+                            </a>
+                        </span>
+                    </div>
+                </article>
+                <article data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-offset="300">
+                    <img src="img/compressed size=2472 x 3684/photo.jpg" alt="photo">
+                    <div class="text">
+                        <h3>Photo</h3>
+                        <p>Photo</p>
+                        <span class="butn">
+                            <a value="Print Image" onclick="printImg19()" class="button">
+                                Print<i class="fas fa-print"></i>
+                            </a>
+                            <a onclick="toast()" download="" href="img/a4 size/photo.jpg" class="button">
+                                Download<i class="fas fa-download"></i>
+                            </a>
+                        </span>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </section>
+
+
+
+    <script src="js/class.js"></script>
+    <script src="js/print.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <!----===== print-js   (https://printjs.crabbly.com/) ===== -->
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <!----===== animate on scroll   (https://michalsnik.github.io/aos/) ===== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 1000,
+        });
+    </script>
+  <script>
+    $(".draggablee").draggable({
+      // axis: "y",
+      containment: "document",
+      // cursor: "grabbing",
+      opacity: 0.5,
+      snap: true,
+      snapTolerance: 100
+    });
+  </script>
+
+</body>
+
+</html>

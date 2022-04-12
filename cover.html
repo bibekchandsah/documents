@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cover_style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color-changer.css">
+    <script src="https://kit.fontawesome.com/df48b76ce5.js" crossorigin="anonymous"></script>
+    
+    <!-- ==================== font-awesome CDN Link fax (https://fontawesome.com/icons) ====================-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Icons'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    
+    <!-- FEATHER ICONS JS data-feather (https://feathericons.com/)-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.js'
+    integrity='sha512-oFCsbxZP/K+0EjvkyIHBvC3ft8LZnO+8kljz0RiJN8ffUCeX0LF1G0WlvU3jMJVaoKBrC+I2ohi4BCpKq2ZgXw=='
+    crossorigin='anonymous' referrerpolicy='no-referrer'></script>
+    
+    <!-- ==================== animate in scroll CDN Link   (https://michalsnik.github.io/aos/) ==================== -->
+    <!-- ==================== animate in scroll CSS ==================== -->
+    <link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet'>
+    <!-- ====================animate in scroll Jsr ==================== -->
+    <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
+    
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    
+    <!-- ==================== favicon ====================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="fav-icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav-icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav-icon/favicon-16x16.png">
+    <link rel="manifest" href="fav-icon/site.webmanifest">
+    
+    <title>Choose Category</title>
+    
+    <!-- ==================== Prevent Backward and forward ====================-->
+    <script>
+      function preventBack() {
+        window.history.forward();
+      }
+      setTimeout('preventBack()', 0);
+      window.onload = function () { null };
+    </script>
+</head>
+
+<body oncopy="return false" onpaste="return false" id="home">
+
+  <!-- custom right click  -->
+  <div class="container wwrapper">
+    <!-- code here -->
+    <div class="menu context--menu ccontent" id="context-menu">
+      <ul class="menu-list menu">
+        <li class="menu-item item" onclick="window.history.back();"><i
+            data-feather="corner-up-left"></i><span>Back</span></li>
+
+        <li class="menu-item item" onclick="window.history.forward();"><i
+            data-feather="corner-up-right"></i><span>Forward</span></li>
+
+        <li class="menu-item item" onclick="location.reload();"><i data-feather="refresh-cw"></i><span>Refresh</span>
+        </li>
+
+        <li class="menu-list item share">
+          <div class="arrow menu-item menu-item-status">
+            <i data-feather="share"></i><span>Share</span><i data-feather="chevron-right" class="menu-item--right"></i>
+          </div>
+
+          <ul class="menu-sub-list share-menu" id="contextt-menu">
+            <li class="menu-item menu-item--blue item"
+              onclick="window.open('https://www.facebook.com/bibek.sha.14268/');"><i
+                data-feather="facebook"></i><span>Facebook</span></li>
+            <li class="menu-item menu-item--pink item"
+              onclick="window.open('https://www.instagram.com/bibeksha1432/');"><i
+                data-feather="instagram"></i><span>Instagram</span></li>
+            <li class="menu-item menu-item--blue item" onclick="window.open('https://twitter.com/BibekSa31789884');"><i
+                data-feather="twitter"></i><span>Twitter</span></li>
+            <li class="menu-item menu-item--purple item" onclick="window.open('https://t.me/bibek10550');">
+              <i data-feather="send"></i><span>Telegram</span>
+            </li>
+            <li class="menu-item menu-item--black item" onclick="window.open('https://github.com/bibek10550');"><i
+                data-feather="github"></i><span>GitHub</span><i class="menu-item--checked" data-feather="check"></i>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-item item" onclick="Copy();"><i data-feather="link"></i><span>Copy Link Address</span>
+        </li>
+        <li class="menu-item item" onclick="FullScreenMode()"><i data-feather="maximize"></i><span>Full
+            Screen</span>
+        </li>
+        <li class="menu-item item" onclick="window.print()"><i data-feather="printer"></i><span>Print</span>
+        </li>
+        <li class="menu-item item"><i data-feather="folder-plus"></i><span>Move to</span></li>
+        <li class="menu-item item"><i data-feather="copy"></i><span>Copy to</span></li>
+        <li class="menu-item item"><i data-feather="lock"></i><span>Make Private</span></li>
+        <li class="menu-item item"><i data-feather="download"></i><span>Download</span></li>
+
+      </ul>
+      <div class="menu-list setting">
+        <li class="menu-item menu-item--delete item"><i data-feather="trash-2"></i><span>Delete</span></li>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========== color-changer ========== -->
+  <div class="color-switcher" id="color-switcher">
+    <span class="draggablee" style="margin: 10px; cursor: move;">
+      <div class="switcher-btn" title="change color">
+        <i class="fas fa-palette change-color"></i>
+      </div>
+      <div class="switcher-btnn" title="Change Theme">
+        <i class="fas uil uil-moon change-theme" id="theme-button" title="Dark Mode"></i>
+      </div>
+    </span>
+    <h3>select color</h3>
+    <div class="theme-buttons-container">
+      <span class="theme-buttons" title="Light Blue" data-color="208" style="background: hsl(208, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#8e44ad" style="background: #8e44ad;"></span> -->
+      <span class="theme-buttons" title="Lighter Blue" data-color="205" style="background: hsl(205, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#27ae60" style="background: #27ae6e;"></span> -->
+      <span class="theme-buttons" title="Dark Blue" data-color="600" style="background: hsl(240, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#e74c3c" style="background: #ea2027;"></span> -->
+      <span class="theme-buttons" title="Dark Green" data-color="142" style="background: hsl(142, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#2980b9" style="background: #2980b9;"></span> -->
+      <span class="theme-buttons" title="Light Green" data-color="1242"
+        style="background: hsl(1242, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#ff4757" style="background: #ff4757;"></span> -->
+      <span class="theme-buttons" title="Red" data-color="340" style="background: hsl(340, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#f39c12" style="background: #f39c12;"></span> -->
+      <span class="theme-buttons" title="Yellow" data-color="761" style="background: hsl(41, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#e84393" style="background: #e84393;"></span> -->
+      <span class="theme-buttons" title="Orange" data-color="20" style="background: hsl(20, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#ffc312" style="background: #ffc312;"></span> -->
+      <span class="theme-buttons reset_rotate" title="Reset" data-color="" style="background: hsl(0, 100%, 50%);"><i
+          class="fa-solid fa-rotate-right rotate_right"></i></span>
+    </div>
+  </div>
+
+    <!-- ========== container ========== -->
+    <div class="container">
+
+        <div class="cards" data-aos="fade-up-right">
+            <div class="imgBx">
+                <img src="img/covers/classs 12.jpg">
+            </div>
+            <div class="content">
+                <div class="details">
+                    <h2>Prasadi Academy <br><a href="verify class xii.html" class="link"><span>Class XII
+                                Documents</span></a></h2>
+                    <ul class="social_icons">
+                        <li><a href="https://www.facebook.com/bibek.sha.14268/" target="_blank"><i
+                                    class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/BibekSa31789884" target="_blank"><i class="fa fa-twitter"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://github.com/bibek10550" target="_blank"><i class="fa fa-github"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/bibeksha1432/" target="_blank"><i class="fa fa-instagram"
+                                    aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards" data-aos="fade-up">
+            <div class="imgBx">
+                <img src="img/covers/class 11.jpg">
+            </div>
+            <div class="content">
+                <div class="details">
+                    <h2>Prasadi Academy <br><a href="verify class xi.html" class="link"><span>Class XI
+                                Documents</span></a></h2>
+                    <ul class="social_icons">
+                        <li><a href="https://www.facebook.com/bibek.sha.14268/" target="_blank"><i
+                                    class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/BibekSa31789884" target="_blank"><i class="fa fa-twitter"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://github.com/bibek10550" target="_blank"><i class="fa fa-github"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/bibeksha1432/" target="_blank"><i class="fa fa-instagram"
+                                    aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards" data-aos="fade-up">
+            <div class="imgBx">
+                <img src="img/covers/class 10.jpg">
+            </div>
+            <div class="content">
+                <div class="details">
+                    <h2>Nepal Police School <br><a href="verify class x.html" class="link"><span>Class X
+                                Documents</span></a></h2>
+                    <ul class="social_icons">
+                        <li><a href="https://www.facebook.com/bibek.sha.14268/" target="_blank"><i
+                                    class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/BibekSa31789884" target="_blank"><i class="fa fa-twitter"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://github.com/bibek10550" target="_blank"><i class="fa fa-github"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/bibeksha1432/" target="_blank"><i class="fa fa-instagram"
+                                    aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards" data-aos="fade-up-left">
+            <div class="imgBx">
+                <img src="img/covers/others.jpg">
+            </div>
+            <div class="content">
+                <div class="details">
+                    <h2>Others <br><a href="verify other.html" class="link"><span>Other Documents</span></a></h2>
+                    <ul class="social_icons">
+                        <li><a href="https://www.facebook.com/bibek.sha.14268/" target="_blank"><i
+                                    class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/BibekSa31789884" target="_blank"><i class="fa fa-twitter"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://github.com/bibek10550" target="_blank"><i class="fa fa-github"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/bibeksha1432/" target="_blank"><i class="fa fa-instagram"
+                                    aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======you can add here no. of div class cards====== -->
+
+        <!-- <div class="cards">
+            <div class="imgBx">
+                <img src="https://images.pexels.com/photos/5565715/pexels-photo-5565715.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
+            </div>
+            <div class="content">
+                <div class="details">
+                    <h2>John Doe <br><span>Senior Designer</span></h2>
+                    <ul class="social_icons">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+    <script src="js/cover_script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 1000,
+        });
+    </script>
+  <script>
+    $(".draggablee").draggable({
+      // axis: "y",
+      containment: "document",
+      // cursor: "grabbing",
+      opacity: 0.5,
+      snap: true,
+      snapTolerance: 100
+    });
+  </script>
+</body>
+
+</html>

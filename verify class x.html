@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="css/verify.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color-changer.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+
+    <!-- FEATHER ICONS JS data-feather (https://feathericons.com/)-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.js'
+        integrity='sha512-oFCsbxZP/K+0EjvkyIHBvC3ft8LZnO+8kljz0RiJN8ffUCeX0LF1G0WlvU3jMJVaoKBrC+I2ohi4BCpKq2ZgXw=='
+        crossorigin='anonymous' referrerpolicy='no-referrer'></script>
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!--==================== fontawesome ====================-->
+    <script src="https://kit.fontawesome.com/64d58efce2.js"></script>
+
+    <!-- ==================== font-awesome CDN Link fax (https://fontawesome.com/icons) ====================-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Icons'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+    <!-- ==================== favicon ====================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="fav-icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav-icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav-icon/favicon-16x16.png">
+    <link rel="manifest" href="fav-icon/site.webmanifest">
+
+    <title>Verify</title>
+
+    <!-- ==================== Prevent Backward and forward ====================-->
+    <script>
+      function preventBack() {
+        window.history.forward();
+      }
+      setTimeout('preventBack()', 0);
+      window.onload = function () { null };
+    </script>
+</head>
+
+<body oncopy="return false" onpaste="return false">
+
+    <!-- custom right click  -->
+    <div class="container wwrapper">
+        <!-- code here -->
+        <div class="menu context--menu ccontent" id="context-menu">
+            <ul class="menu-list menu">
+                <li class="menu-item item" onclick="window.history.back();"><i
+                        data-feather="corner-up-left"></i><span>Back</span></li>
+
+                <li class="menu-item item" onclick="window.history.forward();"><i
+                        data-feather="corner-up-right"></i><span>Forward</span></li>
+
+                <li class="menu-item item" onclick="location.reload();"><i
+                        data-feather="refresh-cw"></i><span>Refresh</span>
+                </li>
+
+                <li class="menu-list item share">
+                    <div class="arrow menu-item menu-item-status">
+                        <i data-feather="share"></i><span>Share</span><i data-feather="chevron-right"
+                            class="menu-item--right"></i>
+                    </div>
+
+                    <ul class="menu-sub-list share-menu" id="contextt-menu">
+                        <li class="menu-item menu-item--blue item"
+                            onclick="window.open('https://www.facebook.com/bibek.sha.14268/');"><i
+                                data-feather="facebook"></i><span>Facebook</span></li>
+                        <li class="menu-item menu-item--pink item"
+                            onclick="window.open('https://www.instagram.com/bibeksha1432/');"><i
+                                data-feather="instagram"></i><span>Instagram</span></li>
+                        <li class="menu-item menu-item--blue item"
+                            onclick="window.open('https://twitter.com/BibekSa31789884');"><i
+                                data-feather="twitter"></i><span>Twitter</span></li>
+                        <li class="menu-item menu-item--purple item" onclick="window.open('https://t.me/bibek10550');">
+                            <i data-feather="send"></i><span>Telegram</span>
+                        </li>
+                        <li class="menu-item menu-item--black item"
+                            onclick="window.open('https://github.com/bibek10550');"><i
+                                data-feather="github"></i><span>GitHub</span><i class="menu-item--checked"
+                                data-feather="check"></i>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-item item" onclick="Copy();"><i data-feather="link"></i><span>Copy Link Address</span>
+                </li>
+                <li class="menu-item item" onclick="FullScreenMode()"><i data-feather="maximize"></i><span>Full
+                        Screen</span>
+                </li>
+                <li class="menu-item item" onclick="window.print()"><i data-feather="printer"></i><span>Print</span>
+                </li>
+                <li class="menu-item item"><i data-feather="folder-plus"></i><span>Move to</span></li>
+                <li class="menu-item item"><i data-feather="copy"></i><span>Copy to</span></li>
+                <li class="menu-item item"><i data-feather="lock"></i><span>Make Private</span></li>
+                <li class="menu-item item"><i data-feather="download"></i><span>Download</span></li>
+
+            </ul>
+            <div class="menu-list setting">
+                <li class="menu-item menu-item--delete item"><i data-feather="trash-2"></i><span>Delete</span></li>
+            </div>
+        </div>
+    </div>
+
+  <!-- ========== color-changer ========== -->
+  <div class="color-switcher" id="color-switcher">
+    <span class="draggablee" style="margin: 10px; cursor: move;">
+      <div class="switcher-btn" title="change color">
+        <i class="fas fa-palette change-color"></i>
+      </div>
+      <div class="switcher-btnn" title="Change Theme">
+        <i class="fas uil uil-moon change-theme" id="theme-button" title="Dark Mode"></i>
+      </div>
+    </span>
+    <h3>select color</h3>
+    <div class="theme-buttons-container">
+      <span class="theme-buttons" title="Light Blue" data-color="208" style="background: hsl(208, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#8e44ad" style="background: #8e44ad;"></span> -->
+      <span class="theme-buttons" title="Lighter Blue" data-color="205" style="background: hsl(205, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#27ae60" style="background: #27ae6e;"></span> -->
+      <span class="theme-buttons" title="Dark Blue" data-color="600" style="background: hsl(240, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#e74c3c" style="background: #ea2027;"></span> -->
+      <span class="theme-buttons" title="Dark Green" data-color="142" style="background: hsl(142, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#2980b9" style="background: #2980b9;"></span> -->
+      <span class="theme-buttons" title="Light Green" data-color="1242"
+        style="background: hsl(1242, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#ff4757" style="background: #ff4757;"></span> -->
+      <span class="theme-buttons" title="Red" data-color="340" style="background: hsl(340, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#f39c12" style="background: #f39c12;"></span> -->
+      <span class="theme-buttons" title="Yellow" data-color="761" style="background: hsl(41, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#e84393" style="background: #e84393;"></span> -->
+      <span class="theme-buttons" title="Orange" data-color="20" style="background: hsl(20, 100%, 50%);"></span>
+      <!-- <span class="theme-buttons" data-color="#ffc312" style="background: #ffc312;"></span> -->
+      <span class="theme-buttons reset_rotate" title="Reset" data-color="" style="background: hsl(0, 100%, 50%);"><i
+          class="fa-solid fa-rotate-right rotate_right"></i></span>
+    </div>
+  </div>
+
+    <!-- login form  -->
+    <div class="login" id="home">
+        <div class="login__content">
+            <div class="login__img">
+                <img src="img/img-login.svg" alt="">
+            </div>
+
+            <div class="login__forms">
+                <form action="#" method="post" class="login__registre" id="login-in" autocomplete="off">
+                    <h1 class="login__title">Sign In</h1>
+
+                    <div class="login__box">
+                        <i class='bx bx-user login__icon'></i>
+                        <input type="text" required placeholder="Username" class="login__input" id="username">
+                    </div>
+
+                    <div class="login__box">
+                        <i class='bx bx-lock-alt login__icon'></i>
+                        <input type="password" required data-pwd-input placeholder="Password" class="login__input"
+                            id="password">
+                        <span class="toggle-password">
+                            <i class="fas fa-eye" data-pwd-toggle></i>
+                        </span>
+                    </div>
+
+                    <a href="index.html" class="login__forgot">Forgot password</a>
+
+                    <a type="submit" class="login__button" onclick="validate()"><button type="submit"
+                            onclick="validate()">Sign In</button></a>
+                    <!-- <button type="submit" class="login__button">Sign In</button> -->
+                    <!-- <a href="#" class="login__button">Sign In</a> -->
+
+                    <div>
+                        <span class="login__account">Don't have an Account ?</span>
+                        <span class="login__signin" id="sign-up">Sign Up</span>
+                    </div>
+                </form>
+
+                <form action="" class="login__create none" id="login-up">
+                    <h1 class="login__title">Create Account</h1>
+
+                    <div class="login__box">
+                        <i class='bx bx-user login__icon'></i>
+                        <input type="text" required placeholder="Username" class="login__input">
+                    </div>
+
+                    <div class="login__box">
+                        <i class='bx bx-at login__icon'></i>
+                        <input type="email" required placeholder="Email" class="login__input">
+                    </div>
+
+                    <div class="login__box">
+                        <i class='bx bx-lock-alt login__icon'></i>
+                        <input type="password" required data-pwwd-input placeholder="Password" class="login__input">
+                        <span class="toggle-password">
+                            <i class="fas fa-eye" data-pwwd-toggle></i>
+                        </span>
+                    </div>
+
+                    <a type="submit" class="login__button"><button type="submit">Sign Up</button></a>
+                    <!-- <a href="#" class="login__button">Sign Up</a> -->
+
+                    <div>
+                        <span class="login__account">Already have an Account ?</span>
+                        <span class="login__signup" id="sign-in">Sign In</span>
+                    </div>
+
+                    <div class="login__social">
+                        <a href="https://www.facebook.com/bibek.sha.14268/" target="_blank"
+                            class="login__social-icon"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://twitter.com/BibekSa31789884" target="_blank" class="login__social-icon"><i
+                                class='bx bxl-twitter'></i></a>
+                        <a href="https://www.instagram.com/bibeksha1432/" target="_blank" class="login__social-icon"><i
+                                class='bx bxl-instagram'></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--===== MAIN JS =====-->
+    <script src="js/verify.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        // username and password validation 
+        function validate() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username == "sah" && password == "bibek") {
+                alert("Access Granted Succesfully");
+                window.open("class x.html");
+                return false;
+            } else {
+                alert("Access Denied");
+                window.open("verify class x.html");
+                return false;
+            }
+        }
+    </script>
+  <script>
+    $(".draggablee").draggable({
+      // axis: "y",
+      containment: "document",
+      // cursor: "grabbing",
+      opacity: 0.5,
+      snap: true,
+      snapTolerance: 100
+    });
+  </script>
+</body>
+
+</html>

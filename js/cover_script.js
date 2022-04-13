@@ -57,8 +57,15 @@ themeButton.addEventListener('click', () => {
 const sidebarr = document.getElementById('color-switcher');
 const close_container = document.getElementById('home');
 
-close_container.onclick = function (e) {
-if (e.target.id !== 'color-switcher' && e.target.id !== 'switcher-btn') {
-  sidebarr.classList.remove('active');
-}
-}
+// close_container.onclick = function (e) {
+// if (e.target.id !== 'color-switcher' && e.target.id !== 'switcher-btn') {
+//   sidebarr.classList.remove('active');
+// }
+// }
+
+window.addEventListener('mouseup', function (event) {
+  var box = document.getElementById('color-switcher');
+  if (event.target != box && event.target.parentNode != box) {
+    sidebarr.classList.remove('active');
+  }
+});
